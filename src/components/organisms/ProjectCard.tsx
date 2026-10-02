@@ -57,7 +57,7 @@ export function ProjectCard({ project, number, labels }: ProjectCardProps) {
 
         <LeafList items={project.highlights} className="mt-6" />
 
-        <TagList label={labels.techUsed} tags={project.tech} className="mt-6" />
+        <TagList label={labels.techUsed} tags={project.tech} tone="nav" className="mt-6" />
 
         {links.length > 0 && (
           <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">

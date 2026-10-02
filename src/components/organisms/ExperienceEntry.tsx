@@ -20,7 +20,7 @@ type ExperienceEntryProps = {
 export function ExperienceEntry({ entry, labels }: ExperienceEntryProps) {
   return (
     <article className="relative grid grid-cols-1 gap-x-10 gap-y-3 py-8 md:grid-cols-[11rem_minmax(0,1fr)]">
-      <WobblyRule seed={entry.organization.length * 7} className="absolute inset-x-0 top-0 -translate-y-1/2" />
+      <WobblyRule seed={entry.organization.length * 7} className="absolute inset-x-0 top-0 h-3 -translate-y-1/2 text-rule" />
       <div className="flex flex-wrap gap-x-4 gap-y-1 md:flex-col">
         <DateRange start={entry.startDate} end={entry.endDate} toLabel={labels.dateRangeTo} className="text-ink" />
         {isFilled(entry.location) && <MonoLabel>{entry.location}</MonoLabel>}
@@ -47,7 +47,7 @@ export function ExperienceEntry({ entry, labels }: ExperienceEntryProps) {
         <LeafList items={entry.bullets} className="mt-5" />
 
         {entry.tech && entry.tech.length > 0 && (
-          <TagList label={labels.experienceTech} tags={entry.tech} className="mt-5" />
+          <TagList label={labels.experienceTech} tags={entry.tech} tone="nav" className="mt-5" />
         )}
       </div>
     </article>

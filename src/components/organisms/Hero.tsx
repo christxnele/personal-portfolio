@@ -17,7 +17,7 @@ export function Hero({ profile, resumeLabel, contactLabel, contactHref }: HeroPr
   const details = [profile.location, profile.pronouns].filter(Boolean)
 
   return (
-    <section id="top" aria-labelledby="hero-title" className="mx-auto max-w-5xl px-4 pb-16 pt-14 sm:px-6 sm:pb-24 sm:pt-24">
+    <section id="top" aria-labelledby="hero-title" className="mx-auto max-w-5xl px-4 pb-28 pt-14 sm:px-6 sm:pb-60 sm:pt-24">
       <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-[1fr_auto]">
         <div>
           {details.length > 0 && <MonoLabel>{details.join(' · ')}</MonoLabel>}
@@ -30,15 +30,17 @@ export function Hero({ profile, resumeLabel, contactLabel, contactHref }: HeroPr
 
           {profile.openTo && (
             <p className="mt-6">
-              <Tag>
-                <Doodle name="leaf" className="size-4 text-accent" />
+              <Tag tone="nav">
+                <Doodle name="leaf" className="size-4 text-nav-ink" />
                 {profile.openTo}
               </Tag>
             </p>
           )}
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href={profile.resumeUrl}>{resumeLabel}</ButtonLink>
+            <ButtonLink href={profile.resumeUrl} variant="outline">
+              {resumeLabel}
+            </ButtonLink>
             <ButtonLink href={contactHref} variant="outline">
               {contactLabel}
             </ButtonLink>
@@ -55,8 +57,6 @@ export function Hero({ profile, resumeLabel, contactLabel, contactHref }: HeroPr
           </div>
         </div>
       </div>
-
-      <Doodle name="vine" className="mt-16 h-8 w-40 text-leaf-400 sm:mt-24" />
     </section>
   )
 }

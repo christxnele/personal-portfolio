@@ -3,18 +3,20 @@ import { WOBBLE_HEIGHT, WOBBLE_WIDTH, wobbleLinePath } from '../../helpers/sketc
 
 type WobblyRuleProps = {
   seed?: number
-  className?: string // set color with a text class, e.g. text-rule
+  // Replaces the default 'h-3 text-rule', so include a height and a text color class.
+  // (Tailwind can't tell which of two text-* classes should win, so they can't be stacked.)
+  className?: string
 }
 
 // Hand-drawn horizontal divider that stretches to its container's width.
-export function WobblyRule({ seed = 1, className }: WobblyRuleProps) {
+export function WobblyRule({ seed = 1, className = 'h-3 text-rule' }: WobblyRuleProps) {
   return (
     <svg
       viewBox={`0 0 ${WOBBLE_WIDTH} ${WOBBLE_HEIGHT}`}
       preserveAspectRatio="none"
       aria-hidden="true"
       focusable="false"
-      className={cn('block h-3 w-full overflow-visible text-rule', className)}
+      className={cn('block w-full overflow-visible', className)}
     >
       <path
         d={wobbleLinePath(seed)}
