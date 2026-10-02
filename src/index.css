@@ -2,14 +2,16 @@
 
 @theme {
   /* Colors, named by role. See CLAUDE.md before adding anything here. */
-  --color-paper: #e4e0c8; /* Villa Nova: page background */
-  --color-surface: #d4d0b9; /* Pastel Gray: cards and alternate sections */
-  --color-ink: #394931; /* Kombu Green: main text and headings */
-  --color-muted: #4e5954; /* Ocean Deep: secondary text, captions, dates */
+  --color-paper: #fbfaf5; /* page background */
+  --color-surface: #f2f1e8; /* cards and alternate sections */
+  --color-ink: #7d8778; /* main text and headings */
+  --color-muted: #525a50; /* secondary text, captions, dates */
   --color-accent: #728156; /* buttons, links, hover */
   --color-mint: #cfe1b9; /* soft fill for tags and highlights */
   --color-laurel: #afb59d; /* Laurel Green: soft fill for tags and highlights */
-  --color-rule: #90997f; /* Artichoke: borders and dividers */
+  --color-rule: #757674; /* borders and dividers */
+  --color-nav: #728156; /* navbar background */
+  --color-nav-ink: #f3efdc; /* navbar text, cream */
   --color-leaf-50: #e7f5dc; /* extra greens for illustrations */
   --color-leaf-200: #b6c99b;
   --color-leaf-300: #98a77c;
@@ -49,7 +51,7 @@
     inset: 0;
     z-index: 50;
     pointer-events: none;
-    opacity: 0.45;
+    opacity: 0.32;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.22 0 0 0 0 0.29 0 0 0 0 0.19 1.6 0 0 0 -0.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
